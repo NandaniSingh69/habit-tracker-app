@@ -1,2 +1,21 @@
+# Dependencies
 node_modules/
+*/node_modules/
+
+# Environment variables
 .env
+*/.env
+.env.local
+.env.production
+
+# Build files
+client/build/
+server/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
