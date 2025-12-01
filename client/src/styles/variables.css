@@ -1,0 +1,53 @@
+
+:root {
+  /* Primary Colors */
+  --color-primary: #4CAF50;
+  --color-primary-light: #81C784;
+  --color-primary-dark: #388E3C;
+  
+  /* Background Colors */
+  --color-bg-main: #F5F5F5;
+  --color-bg-white: #FFFFFF;
+  --color-bg-hover: #FAFAFA;
+  --color-bg-light: #F9F9F9;
+  
+  /* Text Colors */
+  --color-text-primary: #333333;
+  --color-text-secondary: #757575;
+  --color-text-light: #999999;
+  
+  /* Border & Divider */
+  --color-border: #E0E0E0;
+  --color-border-light: #F0F0F0;
+  
+  /* Status Colors */
+  --color-success: #4CAF50;
+  --color-error: #f44336;
+  --color-warning: #ff9800;
+  --color-info: #2196F3;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-hover: 0 6px 16px rgba(0,0,0,0.15);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+}

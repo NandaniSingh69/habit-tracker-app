@@ -1,0 +1,234 @@
+@import '../../styles/variables.css';
+
+.day-card {
+  background: var(--color-bg-white);
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  height: 500px; /* Fixed height instead of min/max */
+}
+
+
+.day-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
+}
+
+.day-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.day-name {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.day-date {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  margin: var(--spacing-lg) auto;
+  transition: transform var(--transition-base);
+}
+
+.day-card:hover .progress-circle {
+  transform: scale(1.05);
+}
+
+.task-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-list h4 {
+  font-size: 14px;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.task-list h4::before {
+  content: '✓';
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-sm) 0;
+  gap: var(--spacing-md);
+  transition: background var(--transition-fast);
+  border-radius: var(--radius-sm);
+  padding-left: var(--spacing-sm);
+  animation: taskSlideIn 0.3s ease;
+}
+
+@keyframes taskSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task-item:hover {
+  background: var(--color-bg-hover);
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.task-checkbox:hover {
+  transform: scale(1.1);
+}
+
+.task-text {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  word-break: break-word;
+  transition: all var(--transition-base);
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: var(--color-text-light);
+  opacity: 0.7;
+}
+
+.add-task-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  animation: fadeIn 0.2s ease;
+}
+
+.add-task-input input {
+  padding: var(--spacing-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  transition: border-color var(--transition-fast);
+  font-family: inherit;
+}
+
+.add-task-input input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.add-task-input button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.add-task-input button:first-of-type {
+  background: var(--color-primary);
+  color: white;
+}
+
+.add-task-input button:first-of-type:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-task-input button:last-of-type {
+  background: var(--color-bg-light);
+  color: var(--color-text-primary);
+}
+
+.add-task-input button:last-of-type:hover {
+  background: var(--color-border);
+}
+
+.add-task-btn {
+  width: 100%;
+  padding: var(--spacing-md);
+  margin-top: auto;
+  background: var(--color-bg-light);
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.add-task-btn:hover {
+  background: rgba(76, 175, 80, 0.1);
+  border-style: solid;
+  transform: translateY(-1px);
+}
+
+.day-status {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.status-label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  display: inline-block;
+}
+
+.completed-label {
+  color: var(--color-success);
+  background: rgba(76, 175, 80, 0.1);
+  font-weight: 600;
+}
+
+.completed-label::after {
+  content: ' 🎉';
+}

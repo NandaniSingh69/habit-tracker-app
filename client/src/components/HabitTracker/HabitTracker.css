@@ -1,0 +1,183 @@
+.habit-tracker {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.habit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.habit-header h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+.add-habit-btn {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.add-habit-btn:hover {
+  background: #45a049;
+}
+
+.add-habit-form {
+  background: #F5F5F5;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.add-habit-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn {
+  flex: 1;
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 8px 16px;
+  background: white;
+  color: #333;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.habit-table {
+  overflow-x: auto;
+}
+
+.habit-table-header {
+  display: grid;
+  grid-template-columns: 2fr repeat(7, 1fr) 1.5fr;
+  gap: 10px;
+  padding: 12px;
+  background: #F5F5F5;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.habit-name-col,
+.habit-day-col,
+.habit-progress-col {
+  text-align: center;
+}
+
+.habit-name-col {
+  text-align: left;
+}
+
+.habit-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(7, 1fr) 1.5fr;
+  gap: 10px;
+  padding: 15px 12px;
+  border-bottom: 1px solid #E0E0E0;
+  align-items: center;
+}
+
+.habit-row:hover {
+  background: #FAFAFA;
+}
+
+.habit-name {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.habit-checkbox-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.habit-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #4CAF50;
+}
+
+.habit-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar-container {
+  flex: 1;
+  height: 8px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #757575;
+  font-weight: 600;
+  min-width: 35px;
+}
+
+.no-habits {
+  text-align: center;
+  padding: 40px 20px;
+  color: #757575;
+}
+
+@media (max-width: 768px) {
+  .habit-table-header,
+  .habit-row {
+    grid-template-columns: 1.5fr repeat(7, 0.6fr) 1fr;
+    gap: 5px;
+    font-size: 12px;
+  }
+  
+  .habit-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+}
