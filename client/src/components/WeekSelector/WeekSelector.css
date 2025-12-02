@@ -45,7 +45,7 @@
   background: var(--color-bg-white);
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--spacing-lg);
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -67,14 +67,153 @@
   transform: translateY(0);
 }
 
+/* ============================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Large phones and tablets (below 900px) */
+@media (max-width: 900px) {
+  .week-selector {
+    gap: var(--spacing-lg);
+  }
+  
+  .week-display {
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+  
+  .week-label {
+    font-size: 11px;
+  }
+  
+  .week-date {
+    font-size: 18px;
+  }
+  
+  .week-nav-btn {
+    padding: 12px var(--spacing-lg);
+    font-size: 13px;
+  }
+}
+
+/* Tablets (below 768px) */
 @media (max-width: 768px) {
   .week-selector {
     flex-direction: column;
     gap: var(--spacing-md);
   }
   
+  .week-display {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .week-label {
+    font-size: 11px;
+  }
+  
+  .week-date {
+    font-size: 17px;
+  }
+  
   .week-nav-btn {
     width: 100%;
     justify-content: center;
+    padding: 14px var(--spacing-xl);
+    font-size: 14px;
+  }
+}
+
+/* Mobile devices (below 600px) */
+@media (max-width: 600px) {
+  .week-selector {
+    gap: var(--spacing-sm);
+  }
+  
+  .week-display {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .week-display:hover {
+    transform: translateY(-1px);
+  }
+  
+  .week-label {
+    font-size: 10px;
+  }
+  
+  .week-date {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+  
+  .week-nav-btn {
+    padding: 14px var(--spacing-lg);
+    font-size: 14px;
+    gap: var(--spacing-xs);
+  }
+  
+  .week-nav-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Very small mobile devices (below 400px) */
+@media (max-width: 400px) {
+  .week-display {
+    padding: 10px var(--spacing-md);
+  }
+  
+  .week-label {
+    font-size: 9px;
+  }
+  
+  .week-date {
+    font-size: 15px;
+  }
+  
+  .week-nav-btn {
+    padding: 12px var(--spacing-md);
+    font-size: 13px;
+  }
+}
+
+/* Landscape mode on mobile devices */
+@media (max-width: 900px) and (orientation: landscape) {
+  .week-selector {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .week-display {
+    width: auto;
+    flex: 1;
+  }
+  
+  .week-nav-btn {
+    width: auto;
+    flex: 0 0 auto;
+    min-width: 120px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .week-nav-btn {
+    min-height: 44px;
+  }
+  
+  .week-display:hover {
+    transform: none;
+  }
+  
+  .week-nav-btn:hover {
+    transform: none;
+    background: var(--color-bg-white);
+    color: var(--color-primary);
+  }
+  
+  .week-nav-btn:active {
+    background: var(--color-primary);
+    color: white;
   }
 }

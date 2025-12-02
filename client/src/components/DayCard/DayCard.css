@@ -232,3 +232,234 @@
 .completed-label::after {
   content: ' 🎉';
 }
+/* ============================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Large phones and small tablets (below 900px) */
+@media (max-width: 900px) {
+  .day-card {
+    padding: 14px;
+    height: auto; /* Allow flexible height on smaller screens */
+    min-height: 300px;
+  }
+  
+  .day-header {
+    padding: 12px;
+  }
+  
+  .day-name {
+    font-size: 15px;
+  }
+  
+  .day-date {
+    font-size: 11px;
+  }
+  
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+    margin: var(--spacing-md) auto;
+  }
+  
+  .task-list h4 {
+    font-size: 13px;
+  }
+  
+  .task-text {
+    font-size: 13px;
+  }
+  
+  .add-task-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile devices (below 600px) */
+@media (max-width: 600px) {
+  .day-card {
+    padding: 12px;
+    height: auto;
+    min-height: 280px;
+  }
+  
+  .day-card:hover {
+    transform: translateY(-2px); /* Less dramatic hover on mobile */
+  }
+  
+  .day-header {
+    padding: 10px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .day-name {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  
+  .day-date {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+  
+  .progress-circle {
+    width: 70px;
+    height: 70px;
+    margin: var(--spacing-sm) auto;
+  }
+  
+  .day-card:hover .progress-circle {
+    transform: scale(1.02); /* Subtle hover on mobile */
+  }
+  
+  .task-list h4 {
+    font-size: 12px;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .task-list h4::before {
+    font-size: 14px;
+  }
+  
+  .task-item {
+    padding: 8px 0;
+    padding-left: 8px;
+  }
+  
+  .task-checkbox {
+    width: 20px; /* Larger for easier tapping */
+    height: 20px;
+  }
+  
+  .task-text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .add-task-input input {
+    padding: 12px; /* Larger for mobile typing */
+    font-size: 14px;
+  }
+  
+  .add-task-input button {
+    padding: 12px 16px; /* Larger touch targets */
+    font-size: 14px;
+  }
+  
+  .add-task-btn {
+    padding: 14px;
+    font-size: 14px;
+    margin-top: var(--spacing-md);
+  }
+  
+  .day-status {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+  }
+  
+  .status-label {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Very small mobile devices (below 400px) */
+@media (max-width: 400px) {
+  .day-card {
+    padding: 10px;
+    min-height: 260px;
+  }
+  
+  .day-header {
+    padding: 8px;
+  }
+  
+  .day-name {
+    font-size: 13px;
+  }
+  
+  .day-date {
+    font-size: 10px;
+  }
+  
+  .progress-circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .task-list h4 {
+    font-size: 11px;
+  }
+  
+  .task-text {
+    font-size: 12px;
+  }
+  
+  .task-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .add-task-input input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .add-task-input button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .add-task-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .status-label {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+/* Landscape mode on mobile devices */
+@media (max-width: 900px) and (orientation: landscape) {
+  .day-card {
+    height: auto;
+    min-height: 250px;
+  }
+  
+  .progress-circle {
+    width: 60px;
+    height: 60px;
+    margin: var(--spacing-sm) auto;
+  }
+  
+  .day-header {
+    padding: 8px;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* These styles apply only to touch devices */
+  
+  .task-checkbox {
+    width: 22px; /* Even larger on touch-only devices */
+    height: 22px;
+  }
+  
+  .add-task-btn,
+  .add-task-input button {
+    min-height: 44px; /* Apple's recommended touch target size */
+  }
+  
+  .day-card:hover {
+    transform: none; /* Disable hover effects on touch devices */
+  }
+  
+  .task-item:hover {
+    background: transparent; /* No hover background on touch */
+  }
+}

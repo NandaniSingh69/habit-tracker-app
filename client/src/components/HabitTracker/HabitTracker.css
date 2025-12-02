@@ -63,6 +63,11 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: #45a049;
 }
 
 .cancel-btn {
@@ -74,6 +79,11 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #F5F5F5;
 }
 
 .habit-table {
@@ -110,6 +120,7 @@
   padding: 15px 12px;
   border-bottom: 1px solid #E0E0E0;
   align-items: center;
+  transition: background 0.2s;
 }
 
 .habit-row:hover {
@@ -133,6 +144,11 @@
   height: 20px;
   cursor: pointer;
   accent-color: #4CAF50;
+  transition: transform 0.1s;
+}
+
+.habit-checkbox:hover {
+  transform: scale(1.1);
 }
 
 .habit-progress {
@@ -166,18 +182,268 @@
   text-align: center;
   padding: 40px 20px;
   color: #757575;
+  font-size: 14px;
 }
 
+/* ============================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Large phones and tablets (below 900px) */
+@media (max-width: 900px) {
+  .habit-tracker {
+    padding: 16px;
+  }
+  
+  .habit-header h3 {
+    font-size: 17px;
+  }
+  
+  .add-habit-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .habit-table-header,
+  .habit-row {
+    grid-template-columns: 1.8fr repeat(7, 0.8fr) 1.2fr;
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  .habit-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .progress-text {
+    font-size: 11px;
+  }
+}
+
+/* Tablets (below 768px) */
 @media (max-width: 768px) {
+  .habit-tracker {
+    padding: 14px;
+  }
+  
+  .habit-header {
+    margin-bottom: 16px;
+  }
+  
+  .habit-header h3 {
+    font-size: 16px;
+  }
+  
+  .add-habit-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
   .habit-table-header,
   .habit-row {
     grid-template-columns: 1.5fr repeat(7, 0.6fr) 1fr;
     gap: 5px;
-    font-size: 12px;
+    font-size: 11px;
+    padding: 10px 8px;
   }
   
   .habit-checkbox {
     width: 16px;
     height: 16px;
+  }
+  
+  .progress-bar-container {
+    height: 6px;
+  }
+  
+  .progress-text {
+    font-size: 10px;
+    min-width: 30px;
+  }
+}
+
+/* Mobile devices (below 600px) */
+@media (max-width: 600px) {
+  .habit-tracker {
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .habit-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .habit-header h3 {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .add-habit-btn {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .add-habit-form {
+    padding: 12px;
+  }
+  
+  .add-habit-form input {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .form-actions {
+    gap: 8px;
+  }
+  
+  .save-btn,
+  .cancel-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  /* Simplified mobile layout - scrollable table */
+  .habit-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .habit-table-header,
+  .habit-row {
+    grid-template-columns: 120px repeat(7, 50px) 80px;
+    gap: 8px;
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+  
+  .habit-name-col {
+    position: sticky;
+    left: 0;
+    background: #F5F5F5;
+    z-index: 1;
+  }
+  
+  .habit-name {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+  
+  .habit-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .habit-day-col {
+    font-size: 10px;
+  }
+  
+  .progress-bar-container {
+    min-width: 50px;
+  }
+  
+  .progress-text {
+    font-size: 10px;
+    min-width: 28px;
+  }
+  
+  .no-habits {
+    padding: 30px 15px;
+    font-size: 13px;
+  }
+}
+
+/* Very small mobile devices (below 400px) */
+@media (max-width: 400px) {
+  .habit-tracker {
+    padding: 10px;
+  }
+  
+  .habit-header h3 {
+    font-size: 15px;
+  }
+  
+  .add-habit-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  
+  .habit-table-header,
+  .habit-row {
+    grid-template-columns: 100px repeat(7, 45px) 70px;
+    gap: 6px;
+    font-size: 10px;
+    padding: 8px 6px;
+  }
+  
+  .habit-name {
+    font-size: 12px;
+    max-width: 100px;
+  }
+  
+  .habit-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .habit-day-col {
+    font-size: 9px;
+  }
+  
+  .progress-bar-container {
+    min-width: 40px;
+    height: 5px;
+  }
+  
+  .progress-text {
+    font-size: 9px;
+    min-width: 25px;
+  }
+}
+
+/* Landscape mode on mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+  .habit-header {
+    flex-direction: row;
+    margin-bottom: 12px;
+  }
+  
+  .add-habit-btn {
+    width: auto;
+  }
+  
+  .habit-table-header,
+  .habit-row {
+    grid-template-columns: 1.5fr repeat(7, 0.7fr) 1fr;
+    gap: 6px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .habit-checkbox {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .add-habit-btn,
+  .save-btn,
+  .cancel-btn {
+    min-height: 44px;
+  }
+  
+  .habit-row:hover {
+    background: transparent;
+  }
+  
+  .habit-checkbox:hover {
+    transform: none;
   }
 }

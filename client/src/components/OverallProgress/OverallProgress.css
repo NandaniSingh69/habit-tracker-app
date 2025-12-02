@@ -64,3 +64,136 @@
 .progress-stats p::before {
   content: '📊 ';
 }
+
+/* ============================================
+   MOBILE RESPONSIVE IMPROVEMENTS
+   ============================================ */
+
+/* Large phones and tablets (below 900px) */
+@media (max-width: 900px) {
+  .overall-progress {
+    padding: var(--spacing-lg);
+  }
+  
+  .overall-progress h3 {
+    font-size: 18px;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .overall-progress h3::before {
+    font-size: 22px;
+  }
+  
+  .progress-circle-large {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .progress-stats p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile devices (below 600px) */
+@media (max-width: 600px) {
+  .overall-progress {
+    padding: var(--spacing-md);
+  }
+  
+  .overall-progress:hover {
+    transform: translateY(-1px); /* Subtle hover on mobile */
+  }
+  
+  .overall-progress h3 {
+    font-size: 16px;
+    margin-bottom: var(--spacing-md);
+    justify-content: center;
+  }
+  
+  .overall-progress h3::before {
+    font-size: 20px;
+  }
+  
+  .progress-display {
+    gap: var(--spacing-md);
+  }
+  
+  .progress-circle-large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .overall-progress:hover .progress-circle-large {
+    transform: scale(1.02); /* More subtle on mobile */
+  }
+  
+  .progress-stats {
+    padding: var(--spacing-md);
+  }
+  
+  .progress-stats p {
+    font-size: 15px;
+  }
+}
+
+/* Very small mobile devices (below 400px) */
+@media (max-width: 400px) {
+  .overall-progress {
+    padding: 12px;
+  }
+  
+  .overall-progress h3 {
+    font-size: 15px;
+  }
+  
+  .overall-progress h3::before {
+    font-size: 18px;
+  }
+  
+  .progress-circle-large {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .progress-stats {
+    padding: 10px;
+  }
+  
+  .progress-stats p {
+    font-size: 14px;
+  }
+}
+
+/* Landscape mode on mobile devices */
+@media (max-width: 900px) and (orientation: landscape) {
+  .overall-progress {
+    padding: var(--spacing-md);
+  }
+  
+  .progress-display {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: var(--spacing-lg);
+  }
+  
+  .progress-circle-large {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .progress-stats {
+    flex: 1;
+    max-width: 200px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .overall-progress:hover {
+    transform: none;
+  }
+  
+  .overall-progress:hover .progress-circle-large {
+    transform: none;
+  }
+}
